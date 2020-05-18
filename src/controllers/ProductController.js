@@ -8,11 +8,12 @@ module.exports = {
 
     return res.json(products);
   },
+  async store(req, res) {
+    const product = await Product.create({
+      title: 'Guitarra Fender Stratocaster',
+      description: 'guitarra americana de 1980',
+      url: 'https://br.pinterest.com/pin/822258844453825780/',
+    });
+    return res.json(product);
+  },
 };
-
-
-// Product.create({
-//   title: 'Guitarra Fender Stratocaster',
-//   description: 'guitarra americana de 1980',
-//   url: 'https://br.pinterest.com/pin/822258844453825780/',
-// });
